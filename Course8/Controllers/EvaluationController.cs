@@ -102,7 +102,8 @@ namespace Course8.Controllers
                 City="<script>alert('xss');</script>", // Exercise 2 - Course 8
                 Country="Romania",
                 Rating=8,
-                Id = 45 //Exercise 7 - Course 8
+                Id = 45, //Exercise 7 - Course 8
+                Description="Un text oarecare scris in graba!"
                 
 
             }
