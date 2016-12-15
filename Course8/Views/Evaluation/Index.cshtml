@@ -4,6 +4,8 @@
     ViewBag.Title = "Index";
 }
 
+
+
 <h2>Index</h2>
 
 <p>
@@ -26,6 +28,7 @@
         <th></th>
     </tr>
 
+    <!--Exercise 3 and 4 and 7 - Course 8 -->
 @foreach (var item in Model) {
     @*<tr>
         <td>
@@ -47,11 +50,16 @@
         </td>
     </tr>*@
 
-    <div class="evaluation">
-        <h4>@item.Name</h4>
-        <span>@item.Rating</span>
-        <p>@item.City, @item.Country</p>
-        </div>
+    //Exercise 9 - Course 8
+    @Html.Partial("~/Views/Evaluation/_Evaluation.cshtml", item)
 }
 
 </table>
+
+<!--Exercise 6 - Course 8-->
+@section test{
+<div>
+    Total number of Evaluation @Model.Count();
+    </div>
+}
+

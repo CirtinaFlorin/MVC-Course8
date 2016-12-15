@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Course8.Controllers
 {
+    //Exercise 1 - Course 8
     public class EvaluationController : Controller
     {
         // GET: Evaluation
@@ -49,15 +50,21 @@ namespace Course8.Controllers
             return View();
         }
 
+        //Exercise 7 - Course 8
         // POST: Evaluation/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
+                //Exercise 8 - Course 8
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                var evaluation = ListOfProject.Single(e => e.Id == id);
+                if (TryUpdateModel(evaluation)) {
+                    return RedirectToAction("Index");
+                }
+                return View(evaluation);
+                
             }
             catch
             {
@@ -88,13 +95,14 @@ namespace Course8.Controllers
         }
 
 
-
+        //Exercise 2 - Course 8
         public static List<ProjectEvaluation> ListOfProject = new List<ProjectEvaluation>() {
             new ProjectEvaluation() {
                 Name="Florin",
-                City="<script>alert('xss');</script>",
+                City="<script>alert('xss');</script>", // Exercise 2 - Course 8
                 Country="Romania",
-                Rating=8
+                Rating=8,
+                Id = 45 //Exercise 7 - Course 8
                 
 
             }

@@ -1,0 +1,24 @@
+﻿<!--Exercise 6 - Course 8-->
+<Doctype html>
+    <html>
+    <head>
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        @RenderBody()
+
+        @RenderSection("test",false)
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Acasa", "Index", "Acasa")</li>
+                <li>@Html.ActionLink("Despre", "Despre", "Acasa")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Acasa")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </body>
+</html>
+
+
+
