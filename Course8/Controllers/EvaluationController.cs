@@ -11,8 +11,16 @@ namespace Course8.Controllers
     public class EvaluationController : Controller
     {
         // GET: Evaluation
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm = null)
         {
+            if (searchTerm != null)
+            {
+                var lowerSearchTerm = searchTerm.ToLower();
+                var model = ListOfProject.Where(p => p.Name.ToLower().StartsWith(lowerSearchTerm))
+                .Take(10);
+
+                return View(model);
+            }
             return View(ListOfProject);
         }
 
@@ -108,5 +116,6 @@ namespace Course8.Controllers
 
             }
         };
+
     }
 }
